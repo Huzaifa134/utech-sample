@@ -9,7 +9,7 @@ const LatestProgramSlider = ({courseScroll}) => {
     <Swiper {...themesflatcarousel} loop={false}  className="owl-carousel owl-theme none">
       <div className="swiper-wrapper">
 
-      {courseScroll.map((course, index)  => (
+      {courseScroll.map((course)  => (
         <SwiperSlide key={course.sys.id}>
           <div
             data-dot=""
