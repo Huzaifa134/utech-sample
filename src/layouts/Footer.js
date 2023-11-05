@@ -25,7 +25,7 @@ const Footer = ({footer}) => {
                       </a>
                     </Link>
                   </div>
-                  <p className="wrap f-mulish" style={{height:'300px'}}>{foot[0].fields.captions}
+                  <p className="wrap f-mulish" style={{height:'300px'}}>{foot.fields.captions}
                   
                   </p>
                   <div className="list-contact">
@@ -33,19 +33,19 @@ const Footer = ({footer}) => {
                       <li className="fx" >
                         <span style={{lineHeight:"25px"}}>
                           <i className="far fa-map-marker-alt" />
-                          {foot[0].fields.address}
+                          {foot.fields.address}
                         </span>
                       </li>
                       <li className="fx">
                         <a href="mailto:hotline@gmail.com">
                           <i className="far fa-envelope" /> 
-                          {foot[0].fields.mail}
+                          {foot.fields.mail}
                         </a>
                       </li>
                       <li className="fx">
                         <a href="tel:012345678">
                           <i className="fal fa-phone" /> 
-                          {foot[0].fields.number}
+                          {foot.fields.number}
                         </a>
                       </li>
                     </ul>
@@ -54,57 +54,57 @@ const Footer = ({footer}) => {
                 <div className="widget widget-business">
                   <div className="inner">
                     <div className="op-time">
-                      <h4 className="title-widget">{foot[0].fields.blueboxTitle}</h4>
+                      <h4 className="title-widget">{foot.fields.blueboxTitle}</h4>
                       <ul>
                         <li>
-                          <span className="f-mulish">{foot[0].fields.days}</span>
+                          <span className="f-mulish">{foot.fields.days}</span>
                         </li>
                         <li>
-                          <span className="f-mulish">{foot[0].fields.time}</span>
+                          <span className="f-mulish">{foot.fields.time}</span>
                         </li>
                       </ul>
                     </div>
                     <div className="cls-time">
-                      <p>{foot[0].fields.closedDetails}</p>
+                      <p>{foot.fields.closedDetails}</p>
                     </div>
                   </div>
                 </div>
                 <div className="widget widget-link">
-                  <h4 className="title-widget">{foot[0].fields.programtitle}</h4>
+                  <h4 className="title-widget">{foot.fields.programtitle}</h4>
                   <ul className="list-link">
                     <li className="fx">
                       <Link href="/program">
-                        <a className="wd-ctm f-mulish">{foot[0].fields.prog1}</a>
+                        <a className="wd-ctm f-mulish">{foot.fields.prog1}</a>
                       </Link>
                     </li>
                     <li className="fx">
                       <Link href="/program">
-                        <a className="wd-ctm f-mulish">{foot[0].fields.prog2}</a>
+                        <a className="wd-ctm f-mulish">{foot.fields.prog2}</a>
                       </Link>
                     </li>
                     <li className="fx">
                       <Link href="/program">
-                        <a className="wd-ctm f-mulish">{foot[0].fields.prog3}</a>
+                        <a className="wd-ctm f-mulish">{foot.fields.prog3}</a>
                       </Link>
                     </li>
                     <li className="fx">
                       <Link href="/program">
-                        <a className="wd-ctm f-mulish">{foot[0].fields.prog4}</a>
+                        <a className="wd-ctm f-mulish">{foot.fields.prog4}</a>
                       </Link>
                     </li>
                     <li className="fx">
                       <Link href="/program">
-                        <a className="wd-ctm f-mulish">{foot[0].fields.prog5}</a>
+                        <a className="wd-ctm f-mulish">{foot.fields.prog5}</a>
                       </Link>
                     </li>
                     <li className="fx">
                       <Link href="/program">
-                        <a className="wd-ctm f-mulish">{foot[0].fields.prog6}</a>
+                        <a className="wd-ctm f-mulish">{foot.fields.prog6}</a>
                       </Link>
                     </li>
                     <li className="fx">
                       <Link href="/program">
-                        <a className="wd-ctm f-mulish">{foot[0].fields.prog7}</a>
+                        <a className="wd-ctm f-mulish">{foot.fields.prog7}</a>
                       </Link>
                     </li>
                   </ul>
