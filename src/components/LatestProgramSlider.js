@@ -9,7 +9,7 @@ const LatestProgramSlider = ({courseScroll}) => {
     <Swiper {...themesflatcarousel} loop={false}  className="owl-carousel owl-theme none">
       <div className="swiper-wrapper">
 
-      {courseScroll.map((course)  => (
+      {courseScroll ? courseScroll.map((course)  => (
         <SwiperSlide key={course.sys.id}>
           <div
             data-dot=""
@@ -51,7 +51,7 @@ const LatestProgramSlider = ({courseScroll}) => {
             </div>
           </div>
         </SwiperSlide>
-      ))}
+      )):"trying to fetch values"}
         
       </div>
       <div className="owl-nav">
