@@ -1081,7 +1081,8 @@ a:focus {
 :root {
   /* color */
   --primary-color1: #fff;
-  --primary-color2: #2b3c6b;
+  /* --primary-color2: #2b3c6b; */
+  --primary-color2: #00a3e8;
   --primary-color3: #00a0fc;
   --primary-color4: #70747f;
   --primary-color5: #b250fe;
