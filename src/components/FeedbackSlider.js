@@ -8,7 +8,7 @@ const FeedbackSlider = ({feedbackDetails}) => {
       loop={false}
       className="owl-carousel owl-theme none home2TestimonialSlider"
     >
-    {feedbackDetails.map((feedback)  => (
+    {feedbackDetails?feedbackDetails.map((feedback)  => (
       <SwiperSlide key={feedback.sys.id}>
         <div className="item-quote" data-dot="">
           <div className="heading">
@@ -52,7 +52,7 @@ const FeedbackSlider = ({feedbackDetails}) => {
           </div>
         </div>
       </SwiperSlide>
-      ))}
+      )):"Loading footer"}
       <div className="owl-dots" />
     </Swiper>
   );

@@ -8,7 +8,7 @@ const Footer = ({footer}) => {
   return (
     <footer id="footer">
     {footer? footer.map((foot) => (
-      <div className="footer-inner">
+      <div className="footer-inner" key={foot.sys.id}>
         <div className="container">
           <div className="row">
             <div className="col-12">

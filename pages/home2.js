@@ -91,18 +91,18 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                       <div className="item-slider-2">
                         <div className="box-content">
                           <div className="sub f-rubik clr-pri-3 text-primary">
-                          {title[0].fields.shortSubHeading}
+                          {title?title[0].fields.shortSubHeading:"cannot get values"}
                           </div>
                           <div className="title clr-pri-2">
-                            {title[0].fields.heading}
+                            {title?title[0].fields.heading:"cannot get values"}
                           </div>
                           <p className="wrap f-rubik">
-                         {title[0].fields.headerTxtDescription.content[0].content[0].value}
+                         {title?title[0].fields.headerTxtDescription.content[0].content[0].value:"cannot get values"}
                           </p>
                           <div className="btn-slider">
                             <Link href="/classes">
                               <a className="fl-btn st-2 bg-primary">
-                                <span className="inner">{title[0].fields.btnTxt}</span>
+                                <span className="inner">{title?title[0].fields.btnTxt:"cannot get values"}</span>
                               </a>
                             </Link>
                           </div>
@@ -110,7 +110,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                         
                         <div className="box-feature">
                           <div className="image">
-                        <Image src={'https:' + title[0].fields.headerImg.fields.file.url} alt="" height={621} width={470}/>
+                        <Image src={'https:' + title?title[0].fields.headerImg.fields.file.url:"cannot get values"} alt="" height={621} width={470}/>
                           </div>
                         </div>
                       </div>
@@ -119,18 +119,18 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                       <div className="item-slider-2">
                         <div className="box-content">
                           <div className="sub f-rubik clr-pri-3 text-primary">
-                            {title[1].fields.shortSubHeading}
+                            {title?title[1].fields.shortSubHeading:"cannot get values"}
                           </div>
                           <div className="title clr-pri-2">
-                          {title[1].fields.heading}
+                          {title?title[1].fields.heading:"cannot get values"}
                           </div>
                           <p className="wrap f-rubik">
-                          {title[1].fields.headerTxtDescription.content[0].content[0].value}
+                          {title?title[1].fields.headerTxtDescription.content[0].content[0].value:"cannot get values"}
                           </p>
                           <div className="btn-slider ">
                             <Link href="/classes">
                               <a className="fl-btn st-2 bg-primary">
-                                <span className="inner ">{title[1].fields.btnTxt}</span>
+                                <span className="inner ">{title?title[1].fields.btnTxt:"cannot get values"}</span>
                               </a>
                             </Link>
                           </div>
@@ -138,7 +138,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                         
                         <div className="box-feature">
                           <div className="image">
-                          <Image src={'https:' + title[1].fields.headerImg.fields.file.url} alt="" height={621} width={470}/>
+                          <Image src={'https:' + title?title[1].fields.headerImg.fields.file.url:"cannot get values"} alt="" height={621} width={470}/>
                           </div>
                         </div>
                       </div>
@@ -159,18 +159,18 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               <div className="title-heading st-2">
                 <div className="sub-heading clr-pri-3 f-mulish">
                   {/*<LeftArrow  />*/}
-                  <span className="inner-sub st-1 text-primary">{subTitleHomepage[0].fields.shortHeading}</span>
+                  <span className="inner-sub st-1 text-primary">{subTitleHomepage?subTitleHomepage[0].fields.shortHeading:"cannot get values"}</span>
                  {/* <RightArrow />*/}
                 </div>
                 <h2 className="title clr-pri-2">
-                  {subTitleHomepage[0].fields.mainHeading}
+                  {subTitleHomepage?subTitleHomepage[0].fields.mainHeading:"cannot get values"}
                 </h2>
               </div>
             </div>
             
             <div className="col-12 ">
               <div className="fl-discovery" style={{ minHeight: '400px' }}>
-              {ourActivePrograms.slice(0, 5).map((card,index) => (
+              {ourActivePrograms?ourActivePrograms.slice(0, 5).map((card,index) => (
              
                
                 <div
@@ -200,7 +200,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                   </div>
                 </div>
                
-                ))}
+                )):"cannot get values"}
 
               </div>
             </div>
@@ -213,7 +213,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
             <div className="col-xl-7 col-lg-7 col-md-12 col-12">
               <div className="feature-about2">
                 
-                <Image src={'https:' + aboutUs[0].fields.aboutImg.fields.file.url} alt="" height={454} width={600} />
+                <Image src={'https:' + aboutUs?aboutUs[0].fields.aboutImg.fields.file.url:"cannot get values"} alt="" height={454} width={600} />
                 <div
                   className="box-parents wow fadeInUp animated"
                   data-wow-delay="0.3ms"
@@ -221,7 +221,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                   style={{border:"2px solid blue"}}
                 >
                   <h5 className="clr-pri-2 title">
-                    <span className="clr-pri-3">{aboutUs[0].fields.squareBoxTxt}</span>
+                    <span className="clr-pri-3">{aboutUs?aboutUs[0].fields.squareBoxTxt:"cannot get values"}</span>
                   </h5>
                   {/*<ul className="fx">
                     <li>
@@ -268,11 +268,11 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               <div className="sc-about-2">
                 <div className="title-heading " >
                   <div className="sub-heading clr-pri-3 f-mulish">
-                    <span className="inner-sub st-2 text-primary ">{aboutUs[0].fields.main}</span>
+                    <span className="inner-sub st-2 text-primary ">{aboutUs?aboutUs[0].fields.main:"cannot get values"}</span>
                   {/*  <RightArrow />*/}
                   </div>
                   <h2 className="title clr-pri-2">
-                    {aboutUs[0].fields.aboutHeading}
+                    {aboutUs?aboutUs[0].fields.aboutHeading:"cannot get values"}
                   </h2>
                 </div>
                 <div className="inner">
@@ -281,7 +281,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                     data-wow-delay="0.3ms"
                     data-wow-duration="1000ms"
                   >
-                    {aboutUs[0].fields.aboutDescription}
+                    {aboutUs?aboutUs[0].fields.aboutDescription:"cannot get values"}
                   </p>
                 {/*  <ul>
                     <li className="st-1 fx">
@@ -303,7 +303,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                 </ul>*/}
                   <Link href="/about">
                     <a className="fl-btn st-11 bg-primary">
-                      <span className="inner">{aboutUs[0].fields.btn}</span>
+                      <span className="inner">{aboutUs?aboutUs[0].fields.btn:"cannot get values"}</span>
                     </a>
                   </Link>
                 </div>
@@ -320,11 +320,11 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
             <div className="title-heading st-3">
               <div className="sub-heading clr-pri-3 f-mulish">
               {/*  <LeftArrow /> */}
-                <span className="inner-sub st-1 text-primary">{courseTitle[0].fields.titleName}</span>
+                <span className="inner-sub st-1 text-primary">{courseTitle?courseTitle[0].fields.titleName:"cannot get values"}</span>
               {/*  <RightArrow />*/}
               </div>
               <h2 className="title clr-pri-2">
-                {courseTitle[0].fields.titleSubheading}
+                {courseTitle?courseTitle[0].fields.titleSubheading:"cannot get values"}
               </h2>
             </div>
           </div>
@@ -348,11 +348,11 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               <div className="title-heading st-4">
                 <div className="sub-heading clr-pri-3 f-mulish">
                  {/* <LeftArrow /> */}
-                  <span className="inner-sub st-1 text-primary">{gallery[0].fields.galleryTitle}</span>
+                  <span className="inner-sub st-1 text-primary">{gallery?gallery[0].fields.galleryTitle:"cannot get values"}</span>
                  {/* <RightArrow />*/}
                 </div>
                 <h2 className="title clr-pri-2">
-                  {gallery[0].fields.galllerySubtitle}
+                  {gallery?gallery[0].fields.galllerySubtitle:"cannot get values"}
                 </h2>
               </div>
             </div>
@@ -364,12 +364,12 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature active">
                   
-                  <Image src={'https:' + gallery[0].fields.img1.fields.file.url} alt="" height={400} width={370}/>
+                  <Image src={'https:' + gallery? gallery[0].fields.img1.fields.file.url:"cannot get values"} alt="" height={400} width={370}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
                       <Link href="/gallery">
-                        <a className=" clr-pri-2">{gallery[0].fields.hoverTxt}</a>
+                        <a className=" clr-pri-2">{gallery?gallery[0].fields.hoverTxt:"cannot get values"}</a>
                       </Link>
                     </h5>
                   </div>
@@ -384,12 +384,12 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature">
                   
-                  <Image src={'https:' + gallery[0].fields.img2.fields.file.url} alt="" height={400} width={370}/>
+                  <Image src={'https:' + gallery? gallery[0].fields.img2.fields.file.url:"cannot get values"} alt="" height={400} width={370}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
                       <Link href="/gallery">
-                        <a className=" clr-pri-2">{gallery[0].fields.hoverTxt}</a>
+                        <a className=" clr-pri-2">{gallery?gallery[0].fields.hoverTxt:"cannot get values"}</a>
                       </Link>
                     </h5>
                   </div>
@@ -404,12 +404,12 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature">
                
-                  <Image src={'https:' + gallery[0].fields.img3.fields.file.url} alt="" height={400} width={370}/>
+                  <Image src={'https:' + gallery? gallery[0].fields.img3.fields.file.url:"cannot get values"} alt="" height={400} width={370}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
                       <Link href="/gallery">
-                        <a className=" clr-pri-2">{gallery[0].fields.hoverTxt}</a>
+                        <a className=" clr-pri-2">{gallery?gallery[0].fields.hoverTxt:"cannot get values"}</a>
                       </Link>
                     </h5>
                   </div>
@@ -424,12 +424,12 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature">
                  
-                  <Image src={'https:' + gallery[0].fields.img4.fields.file.url} alt="" height={400} width={570}/>
+                  <Image src={'https:' +gallery? gallery[0].fields.img4.fields.file.url:"cannot get values"} alt="" height={400} width={570}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
                       <Link href="/gallery">
-                        <a className=" clr-pri-2">{gallery[0].fields.hoverTxt}</a>
+                        <a className=" clr-pri-2">{gallery? gallery[0].fields.hoverTxt:"cannot get values"}</a>
                       </Link>
                     </h5>
                     
@@ -445,12 +445,12 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature">
                   
-                  <Image src={'https:' + gallery[0].fields.img5.fields.file.url} alt="" height={400} width={570}/>
+                  <Image src={'https:' + gallery? gallery[0].fields.img5.fields.file.url:"cannot get values"} alt="" height={400} width={570}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
                       <Link href="/gallery">
-                        <a className=" clr-pri-2">{gallery[0].fields.hoverTxt}</a>
+                        <a className=" clr-pri-2">{gallery? gallery[0].fields.hoverTxt:"cannot get values"}</a>
                       </Link>
                     </h5>
                     
@@ -472,17 +472,17 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="wrap">
                   <h2 className="title clr-pri-1">
-                    {cta[0].fields.title}
+                    {cta?cta[0].fields.title:"cannot get values"}
                   </h2>
                   <p className="sub clr-pri-1 f-mulish">
-                    {cta[0].fields.description}
+                    {cta?cta[0].fields.description:"cannot get values"}
                   </p>
                 </div>
                 <div className="inner-sc-contact ">
                   <div className="box-btn ">
                     <Link href="/contact">
                       <a className="fl-btn st-9 bg-info">
-                        <span className="inner  text-white" >{cta[0].fields.btn}</span>
+                        <span className="inner  text-white" >{cta?cta[0].fields.btn:"cannot get values"}</span>
                       </a>
                     </Link>
                   </div>
@@ -505,8 +505,8 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                       </g>
                     </svg>
                     <ul>
-                      <li className="clr-pri-1">{cta[0].fields.numberTitle}</li>
-                      <li className="clr-pri-1">{cta[0].fields.number}</li>
+                      <li className="clr-pri-1">{cta?cta[0].fields.numberTitle:"cannot get values"}</li>
+                      <li className="clr-pri-1">{cta?cta[0].fields.number:"cannot get values"}</li>
                     </ul>
                   </div>
                 </div>
@@ -522,11 +522,11 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               <div className="title-heading st-3">
                 <div className="sub-heading clr-pri-3 f-mulish">
                  {/* <LeftArrow /> */}
-                  <span className="inner-sub st-1 text-primary">{feedbackHeader[0].fields.title}</span>
+                  <span className="inner-sub st-1 text-primary">{feedbackHeader?feedbackHeader[0].fields.title:"cannot get values"}</span>
                  {/* <RightArrow />*/}
                 </div>
                 <h2 className="title clr-pri-2">
-                {feedbackHeader[0].fields.desc}
+                {feedbackHeader?feedbackHeader[0].fields.desc:"cannot get values"}
                   
                 </h2>
               </div>
