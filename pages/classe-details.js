@@ -3,10 +3,30 @@ import LatestProgramSlider from "../src/components/LatestProgramSlider";
 import PageBanner from "../src/components/PageBanner";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const ClassesDetails = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const ClassesDetails = ({footer}) => {
   return (
-    <Layout bodyClass={"classes-details"}>
+    <Layout bodyClass={"classes-details"} footer={footer}>
       <PageBanner pageName={"Classes Details"} />
       <section className="tf-section tf-classe-detail">
         <div className="container">

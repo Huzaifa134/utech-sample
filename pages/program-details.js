@@ -4,10 +4,30 @@ import PageBanner from "../src/components/PageBanner";
 import ProgramAccordion from "../src/components/ProgramAccordion";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const ProgramsDetails = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const ProgramsDetails = ({footer}) => {
   return (
-    <Layout bodyClass={"program-details"}>
+    <Layout bodyClass={"program-details"} footer={footer}>
       <PageBanner pageName={"Program Single"} pageTitle={"Program Single"} />
       <section className="tf-section tf-program-details">
         <img

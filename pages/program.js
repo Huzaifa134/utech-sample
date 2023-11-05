@@ -4,8 +4,28 @@ import PageBanner from "../src/components/PageBanner";
 import PagginationFuntion from "../src/components/PagginationFuntion";
 import Layout from "../src/layouts/Layout";
 import { getPagination, pagination } from "../src/utils";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const Programs = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const Programs = ({footer}) => {
   let sort = 4;
   const [active, setActive] = useState(1);
   const [state, setstate] = useState([]);
@@ -15,7 +35,7 @@ const Programs = () => {
     setstate(getPagination(list.length, sort));
   }, [active]);
   return (
-    <Layout bodyClass={"pricing"}>
+    <Layout bodyClass={"pricing"} footer={footer}>
       <PageBanner pageName={"Programs"} pageTitle={"Programs"} />
       <section className="tf-section tf-program">
         <div className="container">

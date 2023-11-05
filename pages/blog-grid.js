@@ -4,8 +4,28 @@ import PageBanner2 from "../src/components/PageBanner2";
 import PagginationFuntion from "../src/components/PagginationFuntion";
 import Layout from "../src/layouts/Layout";
 import { getPagination, pagination } from "../src/utils";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const Blog = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const Blog = ({footer}) => {
   let sort = 3;
   const [active, setActive] = useState(1);
   const [state, setstate] = useState([]);
@@ -15,7 +35,7 @@ const Blog = () => {
     setstate(getPagination(list.length, sort));
   }, [active]);
   return (
-    <Layout bodyClass={["shop", "style"]}>
+    <Layout bodyClass={["shop", "style"]} footer={footer}>
       <PageBanner2 pageName={"Blog Grid"} pageTitle={"Blog Grid View"} />
       <section className="tf-section tf-blog-grid">
         <div className="container">

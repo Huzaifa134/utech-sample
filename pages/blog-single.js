@@ -1,10 +1,30 @@
 import Link from "next/link";
 import PageBanner2 from "../src/components/PageBanner2";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const BlogDetails = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const BlogDetails = ({footer}) => {
   return (
-    <Layout bodyClass={["shop", "style"]}>
+    <Layout bodyClass={["shop", "style"]} footer={footer}>
       <PageBanner2 pageName={"Blog Details"} pageTitle={"Single Blog"} />
       <section className="tf-section tf-blog-details">
         <div className="container">

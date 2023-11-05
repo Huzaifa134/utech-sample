@@ -1,10 +1,30 @@
 import PageBanner from "../src/components/PageBanner";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const Contact = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const Contact = ({footer}) => {
   return (
-    <Layout bodyClass={"contact"}>
+    <Layout bodyClass={"contact"} footer={footer}>
       <PageBanner pageName={"Contact"} pageTitle={"Contact Us"} />
 
       <section className="tf-section tf-faq">

@@ -2,10 +2,30 @@ import FeedbackSlider from "../src/components/FeedbackSlider";
 import PageBanner from "../src/components/PageBanner";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const Testimonials = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const Testimonials = ({footer}) => {
   return (
-    <Layout bodyClass={"about"}>
+    <Layout bodyClass={"about"} footer={footer}>
       <PageBanner pageName={"Testimonials"} />
 
       <section className="tf-section tf-testimonial">

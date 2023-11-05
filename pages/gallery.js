@@ -2,10 +2,30 @@ import PageBanner from "../src/components/PageBanner";
 import PhotoGallerySlider from "../src/components/PhotoGallerySlider";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const Gallery = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const Gallery = ({footer}) => {
   return (
-    <Layout bodyClass={"gallery"}>
+    <Layout bodyClass={"gallery"} footer={footer}>
       <PageBanner pageName={"Gallery"} />
 
       <section className="tf-section tf-galley">

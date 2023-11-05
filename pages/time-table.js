@@ -2,10 +2,30 @@ import { Nav, Tab } from "react-bootstrap";
 import PageBanner from "../src/components/PageBanner";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const TimeTable = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const TimeTable = ({footer}) => {
   return (
-    <Layout bodyClass={"about"}>
+    <Layout bodyClass={"about"} footer={footer}>
       <PageBanner pageName={"Time Table"} />
       <section className="tf-section tf-time-table">
         <div className="container-fluid">

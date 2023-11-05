@@ -1,10 +1,30 @@
 import Link from "next/link";
 import PageBanner from "../src/components/PageBanner";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const EventsDetails = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const EventsDetails = ({footer}) => {
   return (
-    <Layout bodyClass={"event-details"}>
+    <Layout bodyClass={"event-details"} footer={footer}>
       <PageBanner pageName={"Events Details"} />
       <section className="tf-section tf-event-detail">
         <div className="container">

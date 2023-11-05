@@ -2,9 +2,30 @@ import PageBanner from "../src/components/PageBanner";
 import { RightArrow, RightArrowPink, RightArrowWhite } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
 
-const Calendar = () => {
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
+
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const Calendar = ({footer}) => {
   return (
-    <Layout bodyClass={"calendar"}>
+    <Layout bodyClass={"calendar"} footer={footer}>
       <PageBanner pageName={"Calendar"} />
       <section className="tf-section tf-calendar">
         <div className="container">

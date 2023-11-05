@@ -6,10 +6,30 @@ import PageBanner from "../src/components/PageBanner";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
 import { brandSlider } from "../src/SliderProps";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
 
-const FAQs = () => {
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
+const FAQs = ({footer}) => {
   return (
-    <Layout bodyClass={"faq"}>
+    <Layout bodyClass={"faq"} footer={footer}>
       <PageBanner pageName={"FAQs"} />
       <section className="tf-section tf-faq">
         <div className="container">

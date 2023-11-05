@@ -14,13 +14,14 @@ export async function getStaticProps() {
   });
 
   const counters= await client.getEntries({ content_type: "counter" });
- 
+  const Footer = await client.getEntries({ content_type: "footer" });
 
   
  
   return {
     props:{
       counter:counters.items,
+      footer:Footer.items,
      
 
     
@@ -30,9 +31,9 @@ export async function getStaticProps() {
 }
 ///end contentful
 
-const About = ({counter}) => {
+const About = ({counter,footer}) => {
   return (
-    <Layout bodyClass={"about"}>
+    <Layout bodyClass={"about"} footer={footer}>
       <PageBanner pageName={"About Us"} />
       <section className="tf-section tf-about">
         <div className="container">

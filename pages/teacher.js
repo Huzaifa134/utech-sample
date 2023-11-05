@@ -5,13 +5,36 @@ import PageBanner from "../src/components/PageBanner";
 import TfCounter from "../src/components/TfCounter";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
+import { createClient } from "contentful";
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
+  });
+
+  const counters= await client.getEntries({ content_type: "counter" });
+  const Footer = await client.getEntries({ content_type: "footer" });
+
+  
+ 
+  return {
+    props:{
+      counter:counters.items,
+      footer:Footer.items,
+     
+
+    
+
+    }
+  }
+}
 const DonutChart = dynamic(() => import("../src/components/DonutChart"), {
   ssr: false,
 });
 
-const Teacher = () => {
+const Teacher = ({counter,footer}) => {
   return (
-    <Layout bodyClass={"teacher"}>
+    <Layout bodyClass={"teacher"} footer={footer}>
       <PageBanner pageName={"Our Teacher"} />
 
       <section className="tf-section tf-about">
@@ -464,7 +487,7 @@ const Teacher = () => {
           </div>
         </div>
       </section>
-      <TfCounter />
+      <TfCounter counter={counter} />
       <section className="tf-section tf-counter2">
         <div className="container">
           <div className="row">
