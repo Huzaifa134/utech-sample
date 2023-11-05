@@ -110,7 +110,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                         
                         <div className="box-feature">
                           <div className="image">
-                        <Image src={'https:' + title?title[0].fields.headerImg.fields.file.url:"cannot get values"} alt="" height={621} width={470}/>
+                        <Image src={'https:' + title[0].fields.headerImg.fields.file.url} alt="" height={621} width={470}/>
                           </div>
                         </div>
                       </div>
@@ -138,7 +138,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
                         
                         <div className="box-feature">
                           <div className="image">
-                          <Image src={'https:' + title?title[1].fields.headerImg.fields.file.url:"cannot get values"} alt="" height={621} width={470}/>
+                          <Image src={'https:' + title[1].fields.headerImg.fields.file.url} alt="" height={621} width={470}/>
                           </div>
                         </div>
                       </div>
@@ -213,7 +213,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
             <div className="col-xl-7 col-lg-7 col-md-12 col-12">
               <div className="feature-about2">
                 
-                <Image src={'https:' + aboutUs?aboutUs[0].fields.aboutImg.fields.file.url:"cannot get values"} alt="" height={454} width={600} />
+                <Image src={'https:' + aboutUs[0].fields.aboutImg.fields.file.url} alt="" height={454} width={600} />
                 <div
                   className="box-parents wow fadeInUp animated"
                   data-wow-delay="0.3ms"
@@ -364,7 +364,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature active">
                   
-                  <Image src={'https:' + gallery? gallery[0].fields.img1.fields.file.url:"cannot get values"} alt="" height={400} width={370}/>
+                  <Image src={'https:' + gallery[0].fields.img1.fields.file.url} alt="" height={400} width={370}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
@@ -384,7 +384,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature">
                   
-                  <Image src={'https:' + gallery? gallery[0].fields.img2.fields.file.url:"cannot get values"} alt="" height={400} width={370}/>
+                  <Image src={'https:' + gallery[0].fields.img2.fields.file.url} alt="" height={400} width={370}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
@@ -404,7 +404,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature">
                
-                  <Image src={'https:' + gallery? gallery[0].fields.img3.fields.file.url:"cannot get values"} alt="" height={400} width={370}/>
+                  <Image src={'https:' + gallery[0].fields.img3.fields.file.url} alt="" height={400} width={370}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
@@ -424,7 +424,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature">
                  
-                  <Image src={'https:' +gallery? gallery[0].fields.img4.fields.file.url:"cannot get values"} alt="" height={400} width={570}/>
+                  <Image src={'https:' + gallery[0].fields.img4.fields.file.url} alt="" height={400} width={570}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
@@ -445,7 +445,7 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
               >
                 <div className="box-feature">
                   
-                  <Image src={'https:' + gallery? gallery[0].fields.img5.fields.file.url:"cannot get values"} alt="" height={400} width={570}/>
+                  <Image src={'https:' + gallery[0].fields.img5.fields.file.url} alt="" height={400} width={570}/>
                   <div className="overlay" />
                   <div className="box-content">
                     <h5 className="title">
