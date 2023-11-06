@@ -18,7 +18,7 @@ import { activeNavMenu } from "../src/utils";
 import Image from 'next/image';
 // contentful 
 import { createClient } from "contentful";
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken:process.env.CONTENTFUL_ACCESS_KEY ,

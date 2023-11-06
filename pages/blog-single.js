@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageBanner2 from "../src/components/PageBanner2";
 import Layout from "../src/layouts/Layout";
 import { createClient } from "contentful";
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken:process.env.CONTENTFUL_ACCESS_KEY ,

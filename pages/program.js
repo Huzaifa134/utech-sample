@@ -5,7 +5,7 @@ import PagginationFuntion from "../src/components/PagginationFuntion";
 import Layout from "../src/layouts/Layout";
 import { getPagination, pagination } from "../src/utils";
 import { createClient } from "contentful";
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken:process.env.CONTENTFUL_ACCESS_KEY ,
