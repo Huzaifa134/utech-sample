@@ -250,6 +250,7 @@
   right: -35px;
   font-size: 23px;
   color: var(--primary-color1);
+  /* color: #1ab9ff; */
 }
 
 .fl-btn.st-3 .inner::before,
@@ -358,6 +359,7 @@
   right: -33px;
   font-size: 25px;
   color: var(--primary-color1);
+  /* color: aqua; */
 }
 
 .fl-btn.st-1:hover {
@@ -666,15 +668,18 @@
 
 .breadcrumbs .breadcrumbs-inner {
   color: var(--primary-color3);
+  /* color: #1b1d21; */
 }
 .inner-page .breadcrumbs .breadcrumbs-inner {
-  color: var(--primary-color9);
+  /* color: var(--primary-color9); */
+  color: #1ab9ff;
   letter-spacing: -0.5px;
 }
 
 .inner-page .breadcrumbs a:hover,
 .inner-page .breadcrumbs a::after {
-  color: var(--primary-color9);
+  /* color: var(--primary-color9); */
+  color: #1ab9ff;
 }
 
 .inner-page .breadcrumbs {
@@ -682,6 +687,7 @@
 }
 .inner-page #mainnav .menu > li > .sub-menu > li > a {
   color: var(--primary-color2);
+  /* color: #1ab9ff; */
 }
 .inner-page .breadcrumbs a,
 .inner-page .page-title .title,
@@ -2209,7 +2215,7 @@
 }
 
 .sc-discovery-2 {
-  background-image: url(../images/background/bg-discovery.png);
+  /* background-image: url(../images/background/bg-discovery.png); */
   background-repeat: no-repeat;
   background-position: center center;
   /* background-size: cover; */
@@ -2892,7 +2898,8 @@
 }
 
 .tf-courses {
-  background-image: url(../images/background/bg-courses.png);
+  /* background-image: url(../images/background/bg-courses.png); */
+  /* background: #d7d7d7; */
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
@@ -3285,6 +3292,8 @@
 .sc-discovery-about .col-discovery {
   width: calc(25% - 25px);
   margin-left: 25px;
+  /* border: 1px solid #0563fb; */
+  /* background-color: rgb(8, 139, 148); */
 }
 
 .about .sc-discovery-2 {
@@ -6589,12 +6598,18 @@
   margin-right: 3px;
 }
 
+/* about page cards  */
+
 .sc-discovery-about .sc-discovery-2 {
   padding: 55px 30px 30px;
+  border: 1px solid #007fb5;
+  background: #f0f9fd;
 }
 
 .sc-discovery-about .sc-discovery-2:hover {
-  background-image: url(../images/background/bg-discovery3.png);
+  /* background-image: url(../images/background/bg-discovery3.png); */
+  /* box-shadow: #1ab9ff; */
+  box-shadow: 5px 5px 20px #008ecb;
   background-repeat: no-repeat;
   background-position: center center;
 }

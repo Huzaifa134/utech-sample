@@ -823,7 +823,7 @@ h6 {
 }
 
 .cls-1 {
-  fill: #00a0fc !important;
+  fill: #003858 !important;
 }
 
 .f-salsa {
@@ -1083,13 +1083,13 @@ a:focus {
   --primary-color1: #fff;
   /* --primary-color2: #2b3c6b; */
   --primary-color2: #00a3e8;
-  --primary-color3: #00a0fc;
+  --primary-color3: #003858;
   --primary-color4: #70747f;
-  --primary-color5: #b250fe;
+  --primary-color5: #00a3e8;
   --primary-color6: #1ab9ff;
-  --primary-color7: #fcf9f4;
-  --primary-color8: #e6a72a;
-  --primary-color9: #fab319;
+  --primary-color7: rgb(253, 0, 0);
+  --primary-color8: #025aa5;
+  --primary-color9: #00a3e8;
 }
 
 /* Header
@@ -1299,7 +1299,8 @@ a:focus {
 }
 
 #mainnav .menu li a {
-  color: var(--primary-color2);
+  /* color: var(--primary-color2); */
+  color: #fff;
   font-size: 18px;
   text-transform: uppercase;
 }
@@ -1317,6 +1318,7 @@ a:focus {
 
 #mainnav.st-2 .menu li a {
   color: var(--primary-color1);
+  /* color: pink; */
 }
 #mainnav .menu li.current-menu-item > a,
 #mainnav.st-2 .menu li:hover > a {
@@ -1335,10 +1337,12 @@ a:focus {
 
 #mainnav.st-2 .menu > li.menu-item-has-children > a::after {
   color: var(--primary-color1);
+  /* color: #003858; */
 }
 
 #mainnav.st-2 .menu > li > .sub-menu > li > a {
   color: var(--primary-color2);
+  /* color: #fff; */
 }
 
 #mainnav.st-2 .menu > li > a {
@@ -1346,6 +1350,7 @@ a:focus {
 }
 /* Sub-menu */
 #mainnav .menu > li > .sub-menu {
+  color: #003858 !important;
   display: block !important;
   opacity: 0;
   z-index: 9999;
@@ -1394,6 +1399,7 @@ a:focus {
   padding: 0px 0px 0px 15px;
   width: 200px;
   text-transform: capitalize;
+  /* color: #003858; */
 }
 
 #mainnav .menu > li > .sub-menu > li:last-child > a {
@@ -1424,6 +1430,7 @@ a:focus {
 #mainnav .menu > li.menu-item-has-children.active > a::after,
 #mainnav .menu > li.menu-item-has-children:hover > a::after {
   color: var(--primary-color3);
+  /* color: #fff; */
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -1684,6 +1691,7 @@ a:focus {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  /* color: #003858; */
 }
 #mainnav .menu > li > ul.sub-menu > li:hover > a:after,
 #mainnav
@@ -1733,7 +1741,8 @@ a:focus {
 
 .inner-page .is-fixed #mainnav .menu > li.menu-item-has-children > a::after,
 .inner-page .is-fixed #mainnav .menu li > a {
-  color: var(--primary-color2);
+  /* color: var(--primary-color2); */
+  color: #fff;
 }
 
 .inner-page
@@ -1855,6 +1864,7 @@ a:focus {
   font-family: "Font Awesome 5 Pro";
   font-size: 18px;
   color: var(--primary-color1);
+  /* color: pink; */
 }
 
 #scroll-top:hover {
