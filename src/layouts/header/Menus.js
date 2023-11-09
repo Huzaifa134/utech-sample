@@ -13,6 +13,12 @@ export const Home = () => (
 );
 export const Pages = () => (
   <Fragment>
+  <li>
+      <Link href="/classes">Classes</Link>
+    </li>
+    <li>
+      <Link href="/classe-details">Classes Details</Link>
+    </li>
     <li>
       <Link href="/calendar">Academic Calendar</Link>
     </li>
