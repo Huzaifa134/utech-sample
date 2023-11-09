@@ -13,6 +13,7 @@ import {
   Shop,
   Teacher,
 } from "./Menus";
+import Image from 'next/image';
 
 
 
@@ -43,8 +44,8 @@ const Header2 = () => {
                 <div id="site-logo" className="clearfix">
                   <Link href="/">
                     <a className="logo">
-                      <img src="assets/images/logo/utech.png" alt="utech" height={130} width={150} />
-
+                      
+                      <Image src="/assets/images/logo/utech.png" alt="utech-logo" height={130} width={150}/>
                     </a>
                   </Link>
                 </div>
@@ -54,11 +55,9 @@ const Header2 = () => {
                 <div className="nav-wrap">
                   <nav id="mainnav" className="mainnav ">
                     <ul className="menu">
-                      <li className="menu-item-has-children">
-                        <a href="#" >HOME</a>
-                        <ul className="sub-menu">
-                          <Home />
-                        </ul>
+                      <li className="menu-item-has-no-children">
+                      <Link href="/">Home</Link>
+                        
                       </li>
                       <li className="menu-item">
                         <About />

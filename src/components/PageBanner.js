@@ -4,11 +4,7 @@ const PageBanner = ({ pageName, pageTitle }) => {
     <section className="tf-page-title">
       <div className="overlay" />
       <div className="overlay-bg" />
-      <img
-        src="assets/images/background/img1innerpage.png"
-        className="bg-inner1"
-        alt=""
-      />
+      
       <img
         src="assets/images/background/img2innerpage.png"
         className="bg-inner2"

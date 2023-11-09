@@ -73,8 +73,8 @@ const Index2 = ({title,subTitleHomepage,ourActivePrograms,aboutUs,counter,course
   }, []);
 
   return (
-    <Layout noHeader bodyClass={"home2"} footer={footer}>
-      <Header2 />
+    <Layout   bodyClass={"home2"} footer={footer}>
+  {/*<Header2 />*/}
       <section className="tf-slider-2">
 
         {/* <div className="overlay" /> */}

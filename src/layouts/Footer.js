@@ -25,7 +25,7 @@ const Footer = ({footer}) => {
                       </a>
                     </Link>
                   </div>
-                  <p className="wrap f-mulish" style={{height:'300px'}}>{foot.fields.captions}
+                  <p className="wrap f-mulish" style={{height:'300px'}}>{foot?foot.fields.captions:"loading"}
                   
                   </p>
                   <div className="list-contact">

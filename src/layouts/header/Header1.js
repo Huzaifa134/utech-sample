@@ -127,10 +127,8 @@ const Header1 = () => {
                 <nav id="mainnav" className="mainnav st-2">
                   <ul className="menu">
                     <li className="menu-item-has-children current-menu-item">
-                      <a href="#">HOME</a>
-                      <ul className="sub-menu">
-                        <Home />
-                      </ul>
+                    <Link href="/">Home</Link>
+                      
                     </li>
                     <li className="menu-item">
                       <About />
