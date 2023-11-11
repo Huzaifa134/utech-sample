@@ -5,11 +5,13 @@
 
 @import "../public/assets/css/style.css";
 @import "../public/assets/css/responsive.css";
+@import "../public/assets//css//owl.carousel.css";
 @import "./mfp.css";
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 @import "swiper/css/scrollbar";
+
 
 .inner-current-item a {
   color: var(--primary-color3) !important;
