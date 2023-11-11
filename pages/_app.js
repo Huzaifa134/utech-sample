@@ -19,16 +19,7 @@ const App = ({ Component, pageProps }) => {
           rel="apple-touch-icon-precomposed"
           href="assets/images/Favicon.png"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Salsa&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Salsa&display=swap"
-          rel="stylesheet"
-        />
+        
       </Head>
       {loader && <PreLoader />}
       <Component {...pageProps} />
